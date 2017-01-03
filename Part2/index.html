@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app = "MyApp">
+<head>
+<title>My Angular Page</title>
+<script src="Angular/angular.js"></script>
+<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0-rc.2/angular.js"></script>
+<script  src = "JS/AngularCode.js"></script>
+
+</head>
+<body ng-controller = "SimpleCtrl">
+<input type = "text" ng-model = "name" placeholder = "Enter your name">
+<br>
+
+<h1>Hello {{name}}!</h1> 
+<hr>
+<div>
+    <input type = "text" placeholder = "Search" ng-model = "search">
+    <table border = 1>
+        <tr><td>Movies</td><td>Likes</td><td>Dislikes</td></tr>
+            <tr ng-repeat = "Movie in Movies|filter:search"><td>{{Movie.name}}</td><td>{{Movie.likes}}</td><td>{{Movie.dislikes}}</td><td><button ng-click = "like(Movie)">Like</button></td><td><button ng-click = "dislike(Movie)">Dislike</button></td></tr>
+        
+    </table>
+    
+    
+    
+    </div>
+</body>
+</html>
